@@ -43,28 +43,9 @@ $$\mathcal{P}_{\text{system}} = \prod_{i=1}^{k} \mathcal{P}_{\text{step}_i}$$
 
 If an LLM has an optimistic 85% single-step accuracy ($p = 0.85$), a 5-step unguided loop degrades to **under 44.3% reliability**:
 
-```
-UNCONSTRAINED PROBABILISTIC LOOP          FLEETCOM DETERMINISTIC AGENTIC WORKFLOW
-════════════════════════════════          ═══════════════════════════════════════
-       [ User Objective ]                        [ User Objective ]
-               │                                          │
-               ▼                                          ▼
-       ┌───────────────┐                  ┌───────────────────────────────┐
-  ┌──► │   LLM Agent   │ ──┐              │      Compiled Software Code   │
-  │    │ (Freeform ReAct)  │  │ Context    │     (Python / LangGraph /     │
-  └─── └───────────────┘ ◄─┘  Rot & Drift │          n8n StateGraph)      │
-               │                          └──────┬────────┬────────┬──────┘
-               ▼                                 │        │        │
-          44% Success                     ┌──────┘        │        └──────┐
-                                          ▼               ▼               ▼
-                                     [Spot-Call]     [Spot-Call]     [Spot-Call]
-                                     (Atomic Task)   (Atomic Task)   (Atomic Task)
-                                          │               │               │
-                                          └───────────────┼───────────────┘
-                                                          ▼
-                                                 100% Deterministic
-                                                       Success
-```
+<p align="center">
+  <img src="assets/fleetcom_philosophy_decay_animated.svg" width="100%" alt="FleetCom AI Probabilistic Decay vs Deterministic Execution Architecture" />
+</p>
 
 **FleetCom AI fundamentally rejects the unconstrained probabilistic loop.**
 

@@ -1,0 +1,384 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 520" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F1216" />
+      <stop offset="50%" stop-color="#161A20" />
+      <stop offset="100%" stop-color="#0B0D10" />
+    </linearGradient>
+
+    <linearGradient id="cardGradDark" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E252F" />
+      <stop offset="100%" stop-color="#141920" />
+    </linearGradient>
+
+    <!-- Red / Danger Gradients for Left Side -->
+    <linearGradient id="dangerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#BE123C" />
+      <stop offset="100%" stop-color="#881337" />
+    </linearGradient>
+
+    <linearGradient id="dangerCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#27171C" />
+      <stop offset="100%" stop-color="#191014" />
+    </linearGradient>
+
+    <!-- Cyan / Emerald Gradients for Right Side -->
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#83B1AF" />
+    </linearGradient>
+
+    <linearGradient id="successCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#132822" />
+      <stop offset="100%" stop-color="#0E1C18" />
+    </linearGradient>
+
+    <!-- Glow Filters -->
+    <filter id="redGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="cyanGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="greenGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Arrow Markers -->
+    <marker id="arrowRed" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#F43F5E" />
+    </marker>
+    <marker id="arrowCyan" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#38BDF8" />
+    </marker>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#22C55E" />
+    </marker>
+    <marker id="arrowTeal" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#83B1AF" />
+    </marker>
+
+    <!-- Animations -->
+    <style>
+      @keyframes dashFlow {
+        from { stroke-dashoffset: 48; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes dashFlowReverse {
+        from { stroke-dashoffset: 0; }
+        to { stroke-dashoffset: 48; }
+      }
+      @keyframes pulseAlert {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+      @keyframes beaconPing {
+        0% { r: 3px; opacity: 1; }
+        100% { r: 12px; opacity: 0; }
+      }
+      @keyframes statusBlink {
+        0%, 100% { fill: #22C55E; }
+        50% { fill: #86EFAC; }
+      }
+      @keyframes dangerBlink {
+        0%, 100% { fill: #F43F5E; }
+        50% { fill: #FDA4AF; }
+      }
+
+      .flow-red {
+        stroke: #F43F5E;
+        stroke-dasharray: 6 6;
+        animation: dashFlowReverse 1.8s linear infinite;
+      }
+      .flow-cyan {
+        stroke: #38BDF8;
+        stroke-dasharray: 6 6;
+        animation: dashFlow 1.6s linear infinite;
+      }
+      .flow-teal {
+        stroke: #83B1AF;
+        stroke-dasharray: 6 6;
+        animation: dashFlow 1.8s linear infinite;
+      }
+      .flow-green {
+        stroke: #22C55E;
+        stroke-dasharray: 6 6;
+        animation: dashFlow 1.4s linear infinite;
+      }
+      .danger-dot {
+        animation: dangerBlink 1.4s ease-in-out infinite;
+      }
+      .beacon-ring-red {
+        animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .status-dot {
+        animation: statusBlink 1.5s ease-in-out infinite;
+      }
+      .beacon-ring {
+        animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .hud-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      }
+      .mono-text {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="960" height="520" rx="20" fill="url(#bgGrad)" stroke="#26303B" stroke-width="1.5" />
+
+  <!-- Subtle Tactical Grid Overlay -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <line x1="120" y1="0" x2="120" y2="520" />
+    <line x1="240" y1="0" x2="240" y2="520" />
+    <line x1="360" y1="0" x2="360" y2="520" />
+    <line x1="480" y1="0" x2="480" y2="520" />
+    <line x1="600" y1="0" x2="600" y2="520" />
+    <line x1="720" y1="0" x2="720" y2="520" />
+    <line x1="840" y1="0" x2="840" y2="520" />
+    <line x1="0" y1="60" x2="960" y2="60" />
+    <line x1="0" y1="180" x2="960" y2="180" />
+    <line x1="0" y1="300" x2="960" y2="300" />
+    <line x1="0" y1="420" x2="960" y2="420" />
+  </g>
+
+  <!-- Top Title Bar / HUD Header -->
+  <g transform="translate(36, 32)">
+    <circle cx="6" cy="6" r="4" fill="#22C55E" class="status-dot" />
+    <circle cx="6" cy="6" r="4" stroke="#22C55E" stroke-width="1.5" fill="none" class="beacon-ring" />
+    <text x="22" y="10" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="2" class="hud-text">
+      FLEETCOM AI • ARCHITECTURAL AXIOM: PROBABILISTIC DECAY vs. DETERMINISTIC WORKFLOWS
+    </text>
+    <text x="680" y="10" fill="#64748B" font-size="10" font-weight="600" letter-spacing="1.5" class="hud-text">
+      MATHEMATICAL PROOF [P = ∏ P_step]
+    </text>
+  </g>
+
+  <!-- Vertical Divider with VS Badge -->
+  <line x1="480" y1="65" x2="480" y2="465" stroke="#334155" stroke-width="1.5" stroke-dasharray="4 4" />
+  <g transform="translate(480, 255)">
+    <circle cx="0" cy="0" r="18" fill="#0F172A" stroke="#475569" stroke-width="1.5" />
+    <text x="0" y="4" text-anchor="middle" fill="#94A3B8" font-size="11" font-weight="800" class="hud-text">VS</text>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- LEFT PANEL: UNCONSTRAINED PROBABILISTIC LOOP (THE PROBLEM)                 -->
+  <!-- ========================================================================= -->
+  <g transform="translate(36, 68)">
+    <!-- Panel Backdrop -->
+    <rect width="420" height="395" rx="14" fill="url(#dangerCardGrad)" stroke="#BE123C" stroke-width="1.5" opacity="0.9" />
+    
+    <!-- Panel Header Badge -->
+    <rect x="16" y="14" width="388" height="28" rx="6" fill="#4C0519" stroke="#F43F5E" stroke-width="0.8" />
+    <circle cx="32" cy="28" r="4" fill="#F43F5E" class="danger-dot" />
+    <text x="44" y="32" fill="#FDA4AF" font-size="10" font-weight="800" letter-spacing="1" class="hud-text">
+      TRADITIONAL AGENT: UNCONSTRAINED REACT LOOP
+    </text>
+    <text x="388" y="32" text-anchor="end" fill="#F43F5E" font-size="9" font-weight="700" class="mono-text">
+      FRAGILE
+    </text>
+
+    <!-- Node 1: User Objective -->
+    <g transform="translate(40, 60)">
+      <rect width="170" height="44" rx="8" fill="#1E293B" stroke="#475569" stroke-width="1" />
+      <text x="85" y="22" text-anchor="middle" fill="#F8FAFC" font-size="11" font-weight="700" class="hud-text">User Prompt / Goal</text>
+      <text x="85" y="35" text-anchor="middle" fill="#94A3B8" font-size="8.5" class="mono-text">Natural Language Input</text>
+    </g>
+
+    <!-- Node 2: Unbounded LLM Orchestrator -->
+    <g transform="translate(40, 134)">
+      <rect width="170" height="68" rx="10" fill="#2E1018" stroke="#F43F5E" stroke-width="1.4" filter="url(#redGlow)" />
+      <text x="85" y="24" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800" class="hud-text">LLM Orchestrator</text>
+      <text x="85" y="40" text-anchor="middle" fill="#FDA4AF" font-size="9" font-weight="600" class="hud-text">Autonomous Next-Step Decider</text>
+      <text x="85" y="54" text-anchor="middle" fill="#FCA5A5" font-size="8.5" class="mono-text">Freeform Prompt / ReAct</text>
+    </g>
+
+    <!-- Animated Red Loopback Arrow (Context Rot) -->
+    <path d="M 210 160 C 270 160, 270 110, 210 110" fill="none" stroke-width="2" class="flow-red" marker-end="url(#arrowRed)" />
+    <g transform="translate(280, 125)">
+      <rect x="-5" y="-10" width="125" height="34" rx="6" fill="#4C0519" stroke="#F43F5E" stroke-width="0.8" />
+      <text x="57" y="4" text-anchor="middle" fill="#FECDD3" font-size="8.5" font-weight="700" class="hud-text">Context Rot &amp; Drift</text>
+      <text x="57" y="16" text-anchor="middle" fill="#FDA4AF" font-size="7.5" class="mono-text">KV-Cache Bloat</text>
+    </g>
+
+    <!-- Linear Down Connector -->
+    <line x1="125" y1="104" x2="125" y2="130" stroke="#F43F5E" stroke-width="1.5" marker-end="url(#arrowRed)" />
+    <line x1="125" y1="202" x2="125" y2="228" stroke="#F43F5E" stroke-width="1.5" marker-end="url(#arrowRed)" />
+
+    <!-- Compound Math Decay Cascade Box -->
+    <g transform="translate(20, 232)">
+      <rect width="380" height="95" rx="8" fill="#180C10" stroke="#881337" stroke-width="1" />
+      <text x="16" y="20" fill="#FDA4AF" font-size="9.5" font-weight="700" letter-spacing="0.5" class="hud-text">
+        COMPOUND PROBABILISTIC DECAY (P_step = 0.85):
+      </text>
+      
+      <!-- Decay Steps Mini-Bar -->
+      <g transform="translate(16, 32)">
+        <!-- Step 1 -->
+        <rect x="0" y="0" width="62" height="28" rx="4" fill="#4C0519" />
+        <text x="31" y="12" text-anchor="middle" fill="#FECDD3" font-size="8" font-weight="600" class="mono-text">Step 1</text>
+        <text x="31" y="24" text-anchor="middle" fill="#FFFFFF" font-size="9.5" font-weight="700" class="mono-text">85.0%</text>
+
+        <!-- Step 2 -->
+        <rect x="70" y="0" width="62" height="28" rx="4" fill="#4C0519" />
+        <text x="101" y="12" text-anchor="middle" fill="#FECDD3" font-size="8" font-weight="600" class="mono-text">Step 2</text>
+        <text x="101" y="24" text-anchor="middle" fill="#FCA5A5" font-size="9.5" font-weight="700" class="mono-text">72.2%</text>
+
+        <!-- Step 3 -->
+        <rect x="140" y="0" width="62" height="28" rx="4" fill="#4C0519" />
+        <text x="171" y="12" text-anchor="middle" fill="#FECDD3" font-size="8" font-weight="600" class="mono-text">Step 3</text>
+        <text x="171" y="24" text-anchor="middle" fill="#F87171" font-size="9.5" font-weight="700" class="mono-text">61.4%</text>
+
+        <!-- Step 4 -->
+        <rect x="210" y="0" width="62" height="28" rx="4" fill="#4C0519" />
+        <text x="241" y="12" text-anchor="middle" fill="#FECDD3" font-size="8" font-weight="600" class="mono-text">Step 4</text>
+        <text x="241" y="24" text-anchor="middle" fill="#EF4444" font-size="9.5" font-weight="700" class="mono-text">52.2%</text>
+
+        <!-- Step 5 -->
+        <rect x="280" y="0" width="68" height="28" rx="4" fill="#7F1D1D" stroke="#EF4444" stroke-width="1" />
+        <text x="314" y="12" text-anchor="middle" fill="#FCA5A5" font-size="8" font-weight="700" class="mono-text">Step 5</text>
+        <text x="314" y="24" text-anchor="middle" fill="#F87171" font-size="9.5" font-weight="800" class="mono-text">44.3%</text>
+      </g>
+      <text x="190" y="82" text-anchor="middle" fill="#F87171" font-size="9" font-weight="600" class="mono-text">
+        Exponential Failure Slope: Error Cascade
+      </text>
+    </g>
+
+    <!-- Bottom Result Card (Red) -->
+    <g transform="translate(20, 340)">
+      <rect width="380" height="42" rx="8" fill="#4C0519" stroke="#F43F5E" stroke-width="1.2" />
+      <circle cx="24" cy="21" r="5" fill="#F43F5E" />
+      <text x="38" y="25" fill="#FFFFFF" font-size="11.5" font-weight="800" class="hud-text">
+        OUTCOME: 44% SYSTEM RELIABILITY
+      </text>
+      <text x="365" y="25" text-anchor="end" fill="#FDA4AF" font-size="9.5" font-weight="600" class="mono-text">
+        Expensive Drift &amp; Failure
+      </text>
+    </g>
+  </g>
+
+  <!-- ========================================================================= -->
+  <!-- RIGHT PANEL: FLEETCOM DETERMINISTIC WORKFLOW (THE SOLUTION)               -->
+  <!-- ========================================================================= -->
+  <g transform="translate(504, 68)">
+    <!-- Panel Backdrop -->
+    <rect width="420" height="395" rx="14" fill="url(#successCardGrad)" stroke="#22C55E" stroke-width="1.5" opacity="0.9" />
+    
+    <!-- Panel Header Badge -->
+    <rect x="16" y="14" width="388" height="28" rx="6" fill="#064E3B" stroke="#22C55E" stroke-width="0.8" />
+    <circle cx="32" cy="28" r="4" fill="#22C55E" class="status-dot" />
+    <text x="44" y="32" fill="#86EFAC" font-size="10" font-weight="800" letter-spacing="1" class="hud-text">
+      FLEETCOM STANDARD: COMPILED STATE MACHINE (DAW)
+    </text>
+    <text x="388" y="32" text-anchor="end" fill="#22C55E" font-size="9" font-weight="700" class="mono-text">
+      DETERMINISTIC
+    </text>
+
+    <!-- Node 1: Ingress / Typed Trigger -->
+    <g transform="translate(20, 56)">
+      <rect width="100" height="46" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1" />
+      <text x="50" y="20" text-anchor="middle" fill="#F8FAFC" font-size="10" font-weight="700" class="hud-text">Typed Trigger</text>
+      <text x="50" y="34" text-anchor="middle" fill="#38BDF8" font-size="8" font-weight="600" class="mono-text">JSON / AST</text>
+    </g>
+
+    <!-- Ingress Arrow to Orchestrator -->
+    <path d="M 120 79 L 146 79" fill="none" stroke-width="2" class="flow-cyan" marker-end="url(#arrowCyan)" />
+
+    <!-- Node 2: Compiled Code Orchestrator -->
+    <g transform="translate(150, 52)">
+      <rect width="248" height="54" rx="10" fill="url(#cardGradDark)" stroke="#38BDF8" stroke-width="1.5" filter="url(#cyanGlow)" />
+      <text x="124" y="22" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800" class="hud-text">Compiled Code Orchestrator</text>
+      <text x="124" y="36" text-anchor="middle" fill="#38BDF8" font-size="9" font-weight="600" class="hud-text">Python • LangGraph • FastMCP</text>
+      <text x="124" y="48" text-anchor="middle" fill="#86EFAC" font-size="8" font-weight="700" class="mono-text">Macro Control Routing: P = 1.0 (Zero LLM)</text>
+    </g>
+
+    <!-- Pathways from Orchestrator down to 3 Spot Calls -->
+    <path d="M 210 106 C 210 130, 80 130, 80 148" fill="none" stroke-width="1.8" class="flow-cyan" marker-end="url(#arrowCyan)" />
+    <path d="M 274 106 L 274 148" fill="none" stroke-width="1.8" class="flow-cyan" marker-end="url(#arrowCyan)" />
+    <path d="M 338 106 C 338 130, 340 130, 340 148" fill="none" stroke-width="1.8" class="flow-cyan" marker-end="url(#arrowCyan)" />
+
+    <!-- 3 Surgical Spot-Calls -->
+    <!-- Spot 1 -->
+    <g transform="translate(20, 150)">
+      <rect width="116" height="62" rx="8" fill="#1E252F" stroke="#83B1AF" stroke-width="1" />
+      <text x="58" y="18" text-anchor="middle" fill="#F8FAFC" font-size="9.5" font-weight="700" class="hud-text">Entity Extract</text>
+      <text x="58" y="32" text-anchor="middle" fill="#83B1AF" font-size="8" class="mono-text">Atomic Spot-Call</text>
+      <rect x="10" y="40" width="96" height="14" rx="3" fill="#0F172A" />
+      <text x="58" y="50" text-anchor="middle" fill="#38BDF8" font-size="7.5" font-weight="700" class="mono-text">JSON Schema</text>
+    </g>
+
+    <!-- Spot 2 -->
+    <g transform="translate(152, 150)">
+      <rect width="116" height="62" rx="8" fill="#1E252F" stroke="#83B1AF" stroke-width="1" />
+      <text x="58" y="18" text-anchor="middle" fill="#F8FAFC" font-size="9.5" font-weight="700" class="hud-text">Intent Classify</text>
+      <text x="58" y="32" text-anchor="middle" fill="#83B1AF" font-size="8" class="mono-text">Calibrated 30ms</text>
+      <rect x="10" y="40" width="96" height="14" rx="3" fill="#0F172A" />
+      <text x="58" y="50" text-anchor="middle" fill="#38BDF8" font-size="7.5" font-weight="700" class="mono-text">Strict Enums</text>
+    </g>
+
+    <!-- Spot 3 -->
+    <g transform="translate(284, 150)">
+      <rect width="116" height="62" rx="8" fill="#1E252F" stroke="#83B1AF" stroke-width="1" />
+      <text x="58" y="18" text-anchor="middle" fill="#F8FAFC" font-size="9.5" font-weight="700" class="hud-text">Synthesis</text>
+      <text x="58" y="32" text-anchor="middle" fill="#83B1AF" font-size="8" class="mono-text">Local 9B / 27B</text>
+      <rect x="10" y="40" width="96" height="14" rx="3" fill="#0F172A" />
+      <text x="58" y="50" text-anchor="middle" fill="#38BDF8" font-size="7.5" font-weight="700" class="mono-text">Pydantic Model</text>
+    </g>
+
+    <!-- Convergence lines into Verification Cascade -->
+    <path d="M 78 212 C 78 234, 180 234, 180 248" fill="none" stroke-width="1.8" class="flow-teal" />
+    <path d="M 210 212 L 210 248" fill="none" stroke-width="1.8" class="flow-teal" />
+    <path d="M 342 212 C 342 234, 240 234, 240 248" fill="none" stroke-width="1.8" class="flow-teal" />
+
+    <!-- Node 4: System 0 Deterministic Verification Ladder -->
+    <g transform="translate(20, 248)">
+      <rect width="380" height="78" rx="10" fill="#064E3B" stroke="#22C55E" stroke-width="1.5" filter="url(#greenGlow)" />
+      <text x="190" y="22" text-anchor="middle" fill="#FFFFFF" font-size="12" font-weight="800" class="hud-text">
+        System 0: Deterministic Verification Ladder
+      </text>
+      <g transform="translate(16, 34)">
+        <rect x="0" y="0" width="108" height="32" rx="4" fill="#022C22" stroke="#10B981" stroke-width="0.8" />
+        <text x="54" y="14" text-anchor="middle" fill="#6EE7B7" font-size="8.5" font-weight="700" class="hud-text">Level 0: Schemas</text>
+        <text x="54" y="26" text-anchor="middle" fill="#A7F3D0" font-size="7.5" class="mono-text">Pydantic / Zod</text>
+
+        <rect x="118" y="0" width="112" height="32" rx="4" fill="#022C22" stroke="#10B981" stroke-width="0.8" />
+        <text x="174" y="14" text-anchor="middle" fill="#6EE7B7" font-size="8.5" font-weight="700" class="hud-text">Level 1: AST / Lint</text>
+        <text x="174" y="26" text-anchor="middle" fill="#A7F3D0" font-size="7.5" class="mono-text">Ruff / Tree-sitter</text>
+
+        <rect x="240" y="0" width="108" height="32" rx="4" fill="#022C22" stroke="#10B981" stroke-width="0.8" />
+        <text x="294" y="14" text-anchor="middle" fill="#6EE7B7" font-size="8.5" font-weight="700" class="hud-text">Level 2: Sandbox</text>
+        <text x="294" y="26" text-anchor="middle" fill="#A7F3D0" font-size="7.5" class="mono-text">Pytest Unit Tests</text>
+      </g>
+    </g>
+
+    <!-- Bottom Result Card (Green) -->
+    <g transform="translate(20, 340)">
+      <rect width="380" height="42" rx="8" fill="#022C22" stroke="#22C55E" stroke-width="1.4" />
+      <circle cx="24" cy="21" r="5" fill="#22C55E" class="status-dot" />
+      <text x="38" y="25" fill="#FFFFFF" font-size="11.5" font-weight="800" class="hud-text">
+        OUTCOME: 100% DETERMINISTIC SUCCESS
+      </text>
+      <text x="365" y="25" text-anchor="end" fill="#86EFAC" font-size="9.5" font-weight="700" class="mono-text">
+        P = 1.0 • Zero Token Waste
+      </text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM HUD FOOTER ==================== -->
+  <g transform="translate(36, 485)">
+    <text x="0" y="14" fill="#F43F5E" font-size="9" font-weight="700" letter-spacing="1" class="hud-text">
+      AUTOREGRESSIVE DECAY: UNBOUNDED RETRIES LEAD TO SYSTEM CATASTROPHE
+    </text>
+    <text x="924" y="14" text-anchor="end" fill="#22C55E" font-size="9" font-weight="700" letter-spacing="1" class="hud-text">
+      FLEETCOM DAW: DETERMINISTIC STATE MACHINES &amp; LEVEL 0-2 VERIFICATION ORACLES
+    </text>
+  </g>
+</svg>
