@@ -44,10 +44,16 @@ $$\mathcal{P}_{\text{system}} = \prod_{i=1}^{k} \mathcal{P}_{\text{step}_i}$$
 If an LLM has an optimistic 85% single-step accuracy ($p = 0.85$), a 5-step unguided loop degrades to **under 44.3% reliability**:
 
 <p align="center">
-  <img src="assets/fleetcom_philosophy_decay_animated.svg" width="100%" alt="FleetCom AI Probabilistic Decay vs Deterministic Execution Architecture" />
+  <img src="assets/math_decay_five_steps_animated.svg" width="100%" alt="The Mathematical Law of Agentic Decay - 5-Step Compound Failure Curve" />
 </p>
 
-**FleetCom AI fundamentally rejects the unconstrained probabilistic loop.**
+### The Solution: Deterministic Agentic Workflows (DAW)
+
+**FleetCom AI fundamentally rejects the unconstrained probabilistic loop.** Macro control flow—routing, state transitions, validation gates, and error recovery—belongs strictly in **compiled deterministic software code**, invoking LLMs only for surgical, isolated spot-calls:
+
+<p align="center">
+  <img src="assets/daw_workflow_architecture_animated.svg" width="100%" alt="FleetCom Deterministic Agentic Workflow (DAW) Architecture" />
+</p>
 
 Inspired by tactical aerospace command matrices and mission-critical industrial control systems, FleetCom AI provides both the **design philosophy** and the **reference implementation** to build autonomous multi-agent fleets with deterministic precision, structured communication protocols, and transparent human oversight.
 
