@@ -232,21 +232,21 @@ python3 -m fleetcom init
 
 ```mermaid
 graph TD
-    classDef sys0 fill:#0f172a,stroke:#22c55e,stroke-width:2px,color:#f8fafc;
-    classDef sys1 fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc;
-    classDef sys2 fill:#311042,stroke:#c084fc,stroke-width:2px,color:#f8fafc;
-    classDef human fill:#14532d,stroke:#4ade80,stroke-width:3px,color:#f8fafc;
+    classDef sys0 fill:#0f172a,stroke:#22c55e,stroke-width:2px,color:#f8fafc
+    classDef sys1 fill:#1e1b4b,stroke:#818cf8,stroke-width:2px,color:#f8fafc
+    classDef sys2 fill:#311042,stroke:#c084fc,stroke-width:2px,color:#f8fafc
+    classDef human fill:#14532d,stroke:#4ade80,stroke-width:3px,color:#f8fafc
 
     INPUT["Event Trigger / User Request"] --> SYS1
 
-    subgraph "System 1: Reflex Decision Layer (~30ms, CPU)"
-        SYS1["Laya ModernBERT-large (~30ms)<br/>• Choice: Fast Intent Routing<br/>• Score: Complexity & Priority<br/>• Noul: Binary Guardrails"]:::sys1
+    subgraph SUB_SYS1 ["System 1: Reflex Decision Layer (~30ms, CPU)"]
+        SYS1["Laya ModernBERT-large (~30ms)<br/>- Choice: Fast Intent Routing<br/>- Score: Complexity & Priority<br/>- Guard: Binary Guardrails"]:::sys1
     end
 
-    SYS1 -->|Select Orchestration Tier| ORCH{Orchestration Tier}
+    SYS1 -->|Select Orchestration Tier| ORCH{"Orchestration Tier"}
 
-    subgraph "Orchestration Tiers"
-        ORCH -->|Tier 0| T0["Pure Python / FastMCP<br/>Zero LLM ($0.00)"]
+    subgraph SUB_ORCH ["Orchestration Tiers"]
+        ORCH -->|Tier 0| T0["Pure Python / FastMCP<br/>Zero LLM (Zero Cost)"]
         ORCH -->|Tier 1| T1["Gated Linear Pipeline<br/>Surgical Spot-Calls"]
         ORCH -->|Tier 2| T2["LangGraph StateGraph<br/>Bounded Cycles & Memory"]
         ORCH -->|Tier 3| T3["n8n Event Triggers<br/>Asynchronous Webhooks"]
@@ -257,15 +257,15 @@ graph TD
 
     SYS2 --> VERIFY
 
-    subgraph "System 0: Deterministic Verification Ladder"
-        VERIFY["6-Level Verification Cascade<br/>• L0: Schemas & Types (Pydantic/Zod)<br/>• L1: Static Linters & AST (Ruff/ESLint)<br/>• L2: Sandbox Execution & Tests<br/>• L3: Laya Confidence Score (P ≥ 0.85)"]:::sys0
+    subgraph SUB_VERIFY ["System 0: Deterministic Verification Ladder"]
+        VERIFY["6-Level Verification Cascade<br/>- L0: Schemas & Types (Pydantic/Zod)<br/>- L1: Static Linters & AST (Ruff/ESLint)<br/>- L2: Sandbox Execution & Tests<br/>- L3: Laya Confidence Score (P >= 0.85)"]:::sys0
     end
 
     VERIFY -->|Pass| DIRECTOR
-    VERIFY -->|Fail (Bounded Max 1 Retry)| T2
+    VERIFY -->|"Fail (Bounded Max 1 Retry)"| T2
 
-    subgraph "Human Director (On the Loop)"
-        DIRECTOR{"1 High-Density Action Card<br/>Approve / Adjust / Reject"}:::human
+    subgraph SUB_HUMAN ["Human Director (On the Loop)"]
+        DIRECTOR["1 High-Density Action Card<br/>Approve / Adjust / Reject"]:::human
     end
 ```
 
@@ -300,12 +300,13 @@ Instead of trusting an LLM to "check its own work" (which academic benchmarks sh
 
 ## 🔔 Stay Connected
 
-- 📺 **YouTube**: Companion video breakdown [https://youtu.be/RWE6xpwrR3s]
-- ⭐ **Star this repository** to support sovereign, deterministic AI engineering and get notified on release.
+- 📺 **YouTube Channel**: Subscribe for architectural deep-dives & tutorials: [youtube.com/@nasimulnadim](https://www.youtube.com/@nasimulnadim)
+- 🎬 **Companion Video**: Watch the complete architectural breakdown: [https://youtu.be/RWE6xpwrR3s](https://youtu.be/RWE6xpwrR3s)
+- ⭐ **Star this repository** and follow along to support sovereign, deterministic AI engineering and get notified on releases!
 - 💬 **Discussions & Issues**: Opening with the v0.1 codebase release.
 
 ---
 
 <div align="center">
-<sub>Built by <a href="https://github.com/nasimulnadim">Nasimul Nadim</a> and the FleetCom AI Community. Licensed under the Apache 2.0 License.</sub>
+<sub>Built with 🛸 by <a href="https://github.com/nasimulnadim">Nasimul Nadim</a>. Master repository of the FleetCom AI ecosystem. Licensed under the Apache 2.0 License.</sub>
 </div>
