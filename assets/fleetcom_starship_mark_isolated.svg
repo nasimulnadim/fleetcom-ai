@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 430" width="100%" height="100%">
+  <!-- Transparent Background - Pure Vector Starship Hull Mark (No Typography) -->
+  <defs>
+    <filter id="hullGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#00E5FF" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <!-- Starship Hull (White Outer Shell with Cockpit Window Cutout) -->
+  <path id="starship-hull" d="M 256 36 
+           Q 350 200 416 410 
+           Q 330 350 256 285 
+           Q 182 350 96 410 
+           Q 162 200 256 36 Z 
+           M 256 105 
+           L 310 216 
+           L 256 190 
+           L 202 216 Z" 
+        fill="#FFFFFF" 
+        fill-rule="evenodd" />
+
+  <!-- 4-point Celestial Command Star cutout (Diya Cyan #00E5FF) -->
+  <path id="celestial-command-star" d="M 256 220 
+           Q 256 238 268 238 
+           Q 256 238 256 256 
+           Q 256 238 244 238 
+           Q 256 238 256 220 Z" 
+        fill="#00E5FF" />
+</svg>

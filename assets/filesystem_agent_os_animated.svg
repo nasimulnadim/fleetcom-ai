@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 440" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="osBgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121519" />
+      <stop offset="50%" stop-color="#171C23" />
+      <stop offset="100%" stop-color="#0F1216" />
+    </linearGradient>
+
+    <!-- Card Gradient -->
+    <linearGradient id="osCardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#232A35" />
+      <stop offset="100%" stop-color="#191F28" />
+    </linearGradient>
+
+    <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#83B1AF" />
+    </linearGradient>
+
+    <!-- CSS Keyframe Animations -->
+    <style>
+      @keyframes dashStream {
+        from { stroke-dashoffset: 40; }
+        to { stroke-dashoffset: 0; }
+      }
+      @keyframes beaconPing {
+        0% { r: 3px; opacity: 1; }
+        100% { r: 12px; opacity: 0; }
+      }
+      @keyframes softPulse {
+        0%, 100% { opacity: 0.6; }
+        50% { opacity: 1; }
+      }
+
+      .dash-teal {
+        stroke: #83B1AF;
+        stroke-dasharray: 6 5;
+        animation: dashStream 1.8s linear infinite;
+      }
+      .dash-cyan {
+        stroke: #38BDF8;
+        stroke-dasharray: 6 5;
+        animation: dashStream 1.5s linear infinite;
+      }
+      .dash-green {
+        stroke: #22C55E;
+        stroke-dasharray: 6 5;
+        animation: dashStream 2s linear infinite;
+      }
+      .ping-circle {
+        animation: beaconPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+      }
+      .pulse-item {
+        animation: softPulse 2.5s ease-in-out infinite;
+      }
+      .mono-text {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      }
+      .sans-text {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base Canvas -->
+  <rect width="960" height="440" rx="20" fill="url(#osBgGrad)" stroke="#26303B" stroke-width="1.5" />
+
+  <!-- Tactical Grid -->
+  <g opacity="0.06" stroke="#FFFFFF" stroke-width="1">
+    <line x1="160" y1="0" x2="160" y2="440" />
+    <line x1="320" y1="0" x2="320" y2="440" />
+    <line x1="480" y1="0" x2="480" y2="440" />
+    <line x1="640" y1="0" x2="640" y2="440" />
+    <line x1="800" y1="0" x2="800" y2="440" />
+    <line x1="0" y1="110" x2="960" y2="110" />
+    <line x1="0" y1="220" x2="960" y2="220" />
+    <line x1="0" y1="330" x2="960" y2="330" />
+  </g>
+
+  <!-- Top Title HUD -->
+  <g transform="translate(36, 30)">
+    <circle cx="6" cy="6" r="4" fill="#83B1AF" />
+    <circle cx="6" cy="6" r="4" stroke="#83B1AF" stroke-width="1.5" fill="none" class="ping-circle" />
+    <text x="22" y="10" fill="#94A3B8" font-size="11" font-weight="700" letter-spacing="2" class="sans-text">
+      FLEETCOM AI • FILESYSTEM-FIRST AGENT OS ARCHITECTURE
+    </text>
+    <text x="680" y="10" fill="#64748B" font-size="10" font-weight="600" letter-spacing="1.5" class="sans-text">
+      STATE API: PLAIN FILES [ZERO CLOUD LOCK-IN]
+    </text>
+  </g>
+
+  <!-- ==================== ANIMATED CONNECTING BUSES ==================== -->
+  <g fill="none" stroke-width="2">
+    <!-- Harnesses to Central Root Bus -->
+    <path d="M 220 120 C 260 120, 270 220, 310 220" class="dash-cyan" />
+    <path d="M 220 185 C 255 185, 270 220, 310 220" class="dash-cyan" />
+    <path d="M 220 255 C 255 255, 270 220, 310 220" class="dash-cyan" />
+    <path d="M 220 320 C 260 320, 270 220, 310 220" class="dash-cyan" />
+
+    <!-- Central Bus into .agents Subsystems -->
+    <path d="M 530 220 C 570 220, 580 125, 620 125" class="dash-teal" />
+    <path d="M 530 220 C 570 220, 580 205, 620 205" class="dash-teal" />
+    <path d="M 530 220 C 570 220, 580 285, 620 285" class="dash-teal" />
+    <path d="M 530 220 C 570 220, 580 365, 620 365" class="dash-teal" />
+  </g>
+
+  <!-- ==================== LEFT: INTERCHANGEABLE HARNESSES ==================== -->
+  <g transform="translate(36, 75)">
+    <!-- Header Badge -->
+    <text x="0" y="16" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.5" class="sans-text">
+      ANY CLIENT / HARNESS
+    </text>
+
+    <!-- Client 1: Antigravity -->
+    <g transform="translate(0, 30)">
+      <rect width="180" height="48" rx="8" fill="url(#osCardGrad)" stroke="#38BDF8" stroke-width="1.2" />
+      <text x="18" y="28" fill="#F8FAFC" font-size="12" font-weight="700" class="sans-text">Google Antigravity</text>
+      <text x="18" y="40" fill="#38BDF8" font-size="8.5" font-weight="600" class="mono-text">Native Agent Loop</text>
+    </g>
+
+    <!-- Client 2: Cursor -->
+    <g transform="translate(0, 95)">
+      <rect width="180" height="48" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="28" fill="#F8FAFC" font-size="12" font-weight="700" class="sans-text">Cursor / Windsurf</text>
+      <text x="18" y="40" fill="#94A3B8" font-size="8.5" font-weight="600" class="mono-text">Rules & Context Reader</text>
+    </g>
+
+    <!-- Client 3: Claude Code -->
+    <g transform="translate(0, 160)">
+      <rect width="180" height="48" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="28" fill="#F8FAFC" font-size="12" font-weight="700" class="sans-text">Claude Code / CLI</text>
+      <text x="18" y="40" fill="#94A3B8" font-size="8.5" font-weight="600" class="mono-text">Terminal Execution</text>
+    </g>
+
+    <!-- Client 4: Python / Script -->
+    <g transform="translate(0, 225)">
+      <rect width="180" height="48" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="28" fill="#F8FAFC" font-size="12" font-weight="700" class="sans-text">Custom Python SDK</text>
+      <text x="18" y="40" fill="#94A3B8" font-size="8.5" font-weight="600" class="mono-text">DAW State Machine</text>
+    </g>
+  </g>
+
+  <!-- ==================== CENTER: THE ROOT GATEWAY ==================== -->
+  <g transform="translate(310, 140)">
+    <rect width="220" height="160" rx="14" fill="url(#osCardGrad)" stroke="#83B1AF" stroke-width="1.8" />
+    <rect width="220" height="160" rx="14" fill="#83B1AF" opacity="0.04" class="pulse-item" />
+
+    <!-- Badge -->
+    <rect x="18" y="16" width="184" height="24" rx="6" fill="#134E4A" opacity="0.6" />
+    <text x="110" y="32" text-anchor="middle" fill="#5EEAD4" font-size="9.5" font-weight="800" letter-spacing="1" class="sans-text">
+      ROOT CONTROL LAYER
+    </text>
+
+    <!-- File Labels -->
+    <text x="30" y="70" fill="#FFFFFF" font-size="14" font-weight="700" class="mono-text">📄 AGENTS.md</text>
+    <text x="50" y="86" fill="#94A3B8" font-size="9.5" class="sans-text">Universal Boot Sequence & Rules</text>
+
+    <text x="30" y="116" fill="#FFFFFF" font-size="14" font-weight="700" class="mono-text">📄 CONTEXT.md</text>
+    <text x="50" y="132" fill="#94A3B8" font-size="9.5" class="sans-text">Directory Manifest & Topology Map</text>
+
+    <!-- Status pill -->
+    <rect x="55" y="142" width="110" height="14" rx="4" fill="#0F172A" />
+    <text x="110" y="152" text-anchor="middle" fill="#22C55E" font-size="8" font-weight="700" class="mono-text">100% GIT-VERSIONED</text>
+  </g>
+
+  <!-- ==================== RIGHT: .agents/ SUBSYSTEM VAULTS ==================== -->
+  <g transform="translate(620, 85)">
+    <!-- Header -->
+    <text x="0" y="6" fill="#64748B" font-size="10" font-weight="700" letter-spacing="1.5" class="sans-text">
+      .agents/ DIRECTORY SUBSYSTEMS
+    </text>
+
+    <!-- Subsystem 1: memory-bank/ -->
+    <g transform="translate(0, 18)">
+      <rect width="300" height="60" rx="8" fill="url(#osCardGrad)" stroke="#38BDF8" stroke-width="1.2" />
+      <text x="18" y="26" fill="#F8FAFC" font-size="12" font-weight="700" class="mono-text">📁 memory-bank/</text>
+      <text x="18" y="44" fill="#94A3B8" font-size="9.5" class="sans-text">
+        active_context.md • progress.md • decisions.md
+      </text>
+    </g>
+
+    <!-- Subsystem 2: rules/ -->
+    <g transform="translate(0, 95)">
+      <rect width="300" height="60" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="26" fill="#F8FAFC" font-size="12" font-weight="700" class="mono-text">📁 rules/</text>
+      <text x="18" y="44" fill="#94A3B8" font-size="9.5" class="sans-text">
+        core.md • reasoning_framework.md • pre-flight gates
+      </text>
+    </g>
+
+    <!-- Subsystem 3: skills/ -->
+    <g transform="translate(0, 175)">
+      <rect width="300" height="60" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="26" fill="#F8FAFC" font-size="12" font-weight="700" class="mono-text">📁 skills/</text>
+      <text x="18" y="44" fill="#94A3B8" font-size="9.5" class="sans-text">
+        Domain capabilities & tool scripts (SKILL.md)
+      </text>
+    </g>
+
+    <!-- Subsystem 4: plans/ & handoffs/ -->
+    <g transform="translate(0, 255)">
+      <rect width="300" height="60" rx="8" fill="url(#osCardGrad)" stroke="#475569" stroke-width="1.2" />
+      <text x="18" y="26" fill="#F8FAFC" font-size="12" font-weight="700" class="mono-text">📁 plans/ & handoffs/</text>
+      <text x="18" y="44" fill="#94A3B8" font-size="9.5" class="sans-text">
+        Active roadmaps & date-stamped session continuity
+      </text>
+    </g>
+  </g>
+</svg>

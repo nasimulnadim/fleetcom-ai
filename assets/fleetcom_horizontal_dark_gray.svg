@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 220" width="100%" height="100%">
+  <!-- Background Canvas: Dark Gray (#231F20) -->
+  <rect id="canvas-background" width="920" height="220" rx="36" fill="#231F20" />
+
+  <!-- Left Emblem: Starfleet Command Delta -->
+  <g id="starship-symbol" transform="translate(48, 22) scale(0.34)">
+    <path id="starship-hull" d="M 256 36 
+             Q 350 200 416 410 
+             Q 330 350 256 285 
+             Q 182 350 96 410 
+             Q 162 200 256 36 Z 
+             M 256 105 
+             L 310 216 
+             L 256 190 
+             L 202 216 Z" 
+          fill="#FFFFFF" fill-rule="evenodd" />
+    <path id="celestial-command-star" d="M 256 220 
+             Q 256 238 268 238 
+             Q 256 238 256 256 
+             Q 256 238 244 238 
+             Q 256 238 256 220 Z" 
+          fill="#231F20" />
+  </g>
+
+  <!-- Brand Typography -->
+  <g id="brand-typography">
+    <text x="240" y="112" 
+          style="font-family: 'Montserrat', 'Outfit', 'Segoe UI', sans-serif; font-size: 52px; font-weight: 900; letter-spacing: 6px;">
+      <tspan id="text-fleetcom" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.0">FLEETCOM </tspan><tspan id="text-ai" fill="#83B1AF" stroke="#83B1AF" stroke-width="1.0">AI</tspan>
+    </text>
+    <text x="244" y="152" 
+          style="font-family: 'Montserrat', 'Outfit', 'Segoe UI', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: 4px; fill: #94A3B8; text-transform: uppercase;">
+      DETERMINISTIC MULTI-AGENT OPERATING SYSTEM
+    </text>
+  </g>
+</svg>

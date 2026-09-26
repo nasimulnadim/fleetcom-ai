@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Background Canvas: Diya Blue (#83B1AF) -->
+  <rect id="canvas-background" width="512" height="512" rx="108" fill="#83B1AF" />
+
+  <!-- Starfleet Command Delta curves + chevron eye (Pure White #FFFFFF) -->
+  <path id="starship-hull" d="M 256 52 
+           Q 360 232 432 460 
+           Q 336 394 256 324 
+           Q 176 394 80 460 
+           Q 152 232 256 52 Z 
+           M 256 128 
+           L 316 250 
+           L 256 222 
+           L 196 250 Z" 
+        fill="#FFFFFF" fill-rule="evenodd" />
+
+  <!-- 4-point Celestial Command Star cutout (#83B1AF) -->
+  <path id="celestial-command-star" d="M 256 254 
+           Q 256 274 270 274 
+           Q 256 274 256 294 
+           Q 256 274 242 274 
+           Q 256 274 256 254 Z" 
+        fill="#83B1AF" />
+</svg>
